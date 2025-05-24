@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Nisher's Hook & Yarn</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nisher's Hook & Yarn</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Services.html">Services</a>
+      <a href="Products.html">Products</a>
+      <a href="Purchase.html">Purchase</a>
+      <a href="Feedback.html">Feedback</a>
+      <a href="Login.html">Login</a>
+      <input type="text" placeholder="Search..." id="searchBar"/>
+    </nav>
+  </header>
+
+  <div class="login-container">
+    <div class="login-form-wrapper" id="loginFormWrapper">
+      <h2>Welcome Back</h2>
+      <p>Log in to continue crafting with Hook & Yarn</p>
+
+      <form class="login-form" id="loginForm">
+        <div class="input-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required />
+        </div>
+
+        <div class="input-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required />
+        </div>
+
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+
+      <div class="login-footer">
+        <p>Don't have an account? <button class="toggle-btn" id="showSignup">Sign up</button></p>
+      </div>
+    </div>
+
+    <div class="signup-form-wrapper hidden" id="signupFormWrapper">
+      <h2>Create Account</h2>
+      <p>Join the Hook & Yarn community</p>
+
+      <form class="signup-form" id="signupForm">
+        <div class="input-group">
+          <label for="signupName">Full Name</label>
+          <input type="text" id="signupName" required />
+        </div>
+        
+        <div class="input-group">
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" required />
+        </div>
+
+        <div class="input-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" required />
+        </div>
+        
+        <div class="input-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" required />
+        </div>
+
+        <button type="submit" class="btn-signup">Create Account</button>
+      </form>
+
+      <div class="login-footer">
+        <p>Already have an account? <button class="toggle-btn" id="showLogin">Log in</button></p>
+      </div>
+    </div>
+
+    <div class="login-decoration">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#f5e6dc" d="M40.3,-56.9C57.2,-48.2,74.3,-36.4,79.6,-20.1C84.9,-3.9,78.4,16.9,66.2,33.4C54,49.9,36.2,62.2,17.4,68.3C-1.5,74.4,-21.3,74.4,-36.6,66.5C-51.9,58.6,-62.6,42.9,-69.3,25.7C-76,8.5,-78.7,-10.2,-71.7,-27.1C-64.7,-44,-48,-59.1,-30.3,-69.3C-12.6,-79.6,4.2,-85.1,20.6,-82.8C37,-80.5,53,-70.4,61.1,-54.9Z" transform="translate(100 100)" />
+      </svg>
+    </div>
+  </div>
+
+   <footer>
+    <p>&copy; 2025 Nisher's Hook & Yarn. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginFormWrapper = document.getElementById('loginFormWrapper');
+      const signupFormWrapper = document.getElementById('signupFormWrapper');
+      const showSignupBtn = document.getElementById('showSignup');
+      const showLoginBtn = document.getElementById('showLogin');
+
+      // Show signup form when "Sign up" button is clicked
+      showSignupBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        loginFormWrapper.classList.add('hidden');
+        signupFormWrapper.classList.remove('hidden');
+      });
+
+      // Show login form when "Log in" button is clicked
+      showLoginBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        signupFormWrapper.classList.add('hidden');
+        loginFormWrapper.classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
